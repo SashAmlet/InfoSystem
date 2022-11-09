@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dataBase>
+	<specialty SPECIALTY="Informaticians">
+		<group GROUP="K10">
+			<student IDENT="1">
+				<name>Olexandr</name>
+				<surname>Olexandrov</surname>
+				<phone>34564536567</phone>
+				<registration>Olexandrovka</registration>
+			</student>
+			<student IDENT="2">
+				<name>Maxim</name>
+				<surname>Olexandrov</surname>
+				<phone>56453645365</phone>
+				<registration>Maximovka</registration>
+			</student>
+			<student IDENT="3">
+				<name>Pavel</name>
+				<surname>Olexandrov</surname>
+				<phone>4356453456</phone>
+				<registration>Pavlovka</registration>
+			</student>
+		</group>
+		<group GROUP="K11">
+			<student IDENT="4">
+				<name>Egor</name>
+				<surname>Olexandrov</surname>
+				<phone>5678679867</phone>
+				<registration>Pavlovka</registration>
+			</student>
+			<student IDENT="5">
+				<name>Danil</name>
+				<surname>Olexandrov</surname>
+				<phone>1234534456</phone>
+				<registration>Olexandrovka</registration>
+			</student>
+			<student IDENT="6">
+				<name>Olexandr</name>
+				<surname>Maximov</surname>
+				<phone>645624346</phone>
+				<registration>Danilovka</registration>
+			</student>
+		</group>
+		<group GROUP="K12">
+			<student IDENT="7">
+				<name>Maxim</name>
+				<surname>Maximov</surname>
+				<phone>75445345</phone>
+				<registration>Olexandrovka</registration>
+			</student>
+			<student IDENT="8">
+				<name>Pavel</name>
+				<surname>Maximov</surname>
+				<phone>4356768654</phone>
+				<registration>Maximovka</registration>
+			</student>
+			<student IDENT="9">
+				<name>Egor</name>
+				<surname>Maximov</surname>
+				<phone>2454645654</phone>
+				<registration>Olexandrovka</registration>
+			</student>
+		</group>
+	</specialty>
+	<specialty SPECIALTY="Mathematicians">
+		<group GROUP="K13">
+			<student IDENT="10">
+				<name>Danil</name>
+				<surname>Maximov</surname>
+				<phone>142354353</phone>
+				<registration>Danilovka</registration>
+			</student>
+			<student IDENT="11">
+				<name>Olexandr</name>
+				<surname>Pavlov</surname>
+				<phone>6574745677</phone>
+				<registration>Pavlovka</registration>
+			</student>
+			<student IDENT="12">
+				<name>Maxim</name>
+				<surname>Pavlov</surname>
+				<phone>45234543</phone>
+				<registration>Maximovka</registration>
+			</student>
+		</group>
+		<group GROUP="K14">
+			<student IDENT="13">
+				<name>Pavel</name>
+				<surname>Pavlov</surname>
+				<phone>34523534</phone>
+				<registration>Olexandrovka</registration>
+			</student>
+			<student IDENT="14">
+				<name>Egor</name>
+				<surname>Pavlov</surname>
+				<phone>756756768</phone>
+				<registration>Danilovka</registration>
+			</student>
+			<student IDENT="15">
+				<name>Danil</name>
+				<surname>Pavlov</surname>
+				<phone>645765676</phone>
+				<registration>Olexandrovka</registration>
+			</student>
+		</group>
+		<group GROUP="K15">
+			<student IDENT="16">
+				<name>Olexandr</name>
+				<surname>Egorov</surname>
+				<phone>532532543</phone>
+				<registration>Danilovka</registration>
+			</student>
+			<student IDENT="17">
+				<name>Maxim</name>
+				<surname>Egorov</surname>
+				<phone>967976967</phone>
+				<registration>Olexandrovka</registration>
+			</student>
+			<student IDENT="18">
+				<name>Pavel</name>
+				<surname>Egorov</surname>
+				<phone>3253535432</phone>
+				<registration>Pavlovka</registration>
+			</student>
+		</group>
+	</specialty>
+	<specialty SPECIALTY="Engineers">
+		<group GROUP="K16">
+			<student IDENT="19">
+				<name>Egor</name>
+				<surname>Egorov</surname>
+				<phone>6456456456</phone>
+				<registration>Olexandrovka</registration>
+			</student>
+			<student IDENT="20">
+				<name>Danil</name>
+				<surname>Egorov</surname>
+				<phone>3255344534</phone>
+				<registration>Olexandrovka</registration>
+			</student>
+			<student IDENT="21">
+				<name>Olexandr</name>
+				<surname>Danilov</surname>
+				<phone>4365465466</phone>
+				<registration>Olexandrovka</registration>
+			</student>
+		</group>
+		<group GROUP="K17">
+			<student IDENT="22">
+				<name>Maxim</name>
+				<surname>Danilov</surname>
+				<phone>346456456</phone>
+				<registration>Maximovka</registration>
+			</student>
+			<student IDENT="23">
+				<name>Pavel</name>
+				<surname>Danilov</surname>
+				<phone>7567567567</phone>
+				<registration>Olexandrovka</registration>
+			</student>
+			<student IDENT="24">
+				<name>Egor</name>
+				<surname>Danilov</surname>
+				<phone>239485093</phone>
+				<registration>Maximovka</registration>
+			</student>
+		</group>
+		<group GROUP="K18">
+			<student IDENT="25">
+				<name>Danil</name>
+				<surname>Danilov</surname>
+				<phone>235345345</phone>
+				<registration>Pavlovka</registration>
+			</student>
+			<student IDENT="26">
+				<name>Olexandr</name>
+				<surname>Danilov</surname>
+				<phone>239485093</phone>
+				<registration>Danilovka</registration>
+			</student>
+			<student IDENT="27">
+				<name>Maxim</name>
+				<surname>Danilov</surname>
+				<phone>75756756764</phone>
+				<registration>Maximovka</registration>
+			</student>
+		</group>
+	</specialty>
+</dataBase>
