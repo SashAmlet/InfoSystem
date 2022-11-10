@@ -80,11 +80,11 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 42);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 40);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1759, 671);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1759, 673);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -112,7 +112,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11136F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22049F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(653, 665);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(653, 667);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel10
@@ -123,11 +123,11 @@
             this.tableLayoutPanel10.Controls.Add(this.registrationComboBox, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.checkBoxReg, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 368);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 373);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(647, 67);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(647, 68);
             this.tableLayoutPanel10.TabIndex = 8;
             // 
             // registrationComboBox
@@ -146,7 +146,7 @@
             this.checkBoxReg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxReg.Location = new System.Drawing.Point(3, 3);
             this.checkBoxReg.Name = "checkBoxReg";
-            this.checkBoxReg.Size = new System.Drawing.Size(178, 61);
+            this.checkBoxReg.Size = new System.Drawing.Size(178, 62);
             this.checkBoxReg.TabIndex = 2;
             this.checkBoxReg.Text = "Registration";
             this.checkBoxReg.UseVisualStyleBackColor = true;
@@ -159,11 +159,11 @@
             this.tableLayoutPanel9.Controls.Add(this.phoneComboBox, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.checkBoxPhone, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 295);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 299);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(647, 67);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(647, 68);
             this.tableLayoutPanel9.TabIndex = 7;
             // 
             // phoneComboBox
@@ -182,7 +182,7 @@
             this.checkBoxPhone.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxPhone.Location = new System.Drawing.Point(3, 3);
             this.checkBoxPhone.Name = "checkBoxPhone";
-            this.checkBoxPhone.Size = new System.Drawing.Size(178, 61);
+            this.checkBoxPhone.Size = new System.Drawing.Size(178, 62);
             this.checkBoxPhone.TabIndex = 1;
             this.checkBoxPhone.Text = "Phone num";
             this.checkBoxPhone.UseVisualStyleBackColor = true;
@@ -195,11 +195,11 @@
             this.tableLayoutPanel8.Controls.Add(this.surnameComboBox, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.checkBoxSurname, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 222);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 225);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(647, 67);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(647, 68);
             this.tableLayoutPanel8.TabIndex = 6;
             // 
             // surnameComboBox
@@ -218,7 +218,7 @@
             this.checkBoxSurname.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxSurname.Location = new System.Drawing.Point(3, 3);
             this.checkBoxSurname.Name = "checkBoxSurname";
-            this.checkBoxSurname.Size = new System.Drawing.Size(178, 61);
+            this.checkBoxSurname.Size = new System.Drawing.Size(178, 62);
             this.checkBoxSurname.TabIndex = 1;
             this.checkBoxSurname.Text = "Surname";
             this.checkBoxSurname.UseVisualStyleBackColor = true;
@@ -231,11 +231,11 @@
             this.tableLayoutPanel7.Controls.Add(this.nameComboBox, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.checkBoxName, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 149);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 151);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(647, 67);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(647, 68);
             this.tableLayoutPanel7.TabIndex = 5;
             // 
             // nameComboBox
@@ -254,7 +254,7 @@
             this.checkBoxName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxName.Location = new System.Drawing.Point(3, 3);
             this.checkBoxName.Name = "checkBoxName";
-            this.checkBoxName.Size = new System.Drawing.Size(178, 61);
+            this.checkBoxName.Size = new System.Drawing.Size(178, 62);
             this.checkBoxName.TabIndex = 1;
             this.checkBoxName.Text = "Name";
             this.checkBoxName.UseVisualStyleBackColor = true;
@@ -267,11 +267,11 @@
             this.tableLayoutPanel6.Controls.Add(this.groupComboBox, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.checkBoxGroup, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 76);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 77);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(647, 67);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(647, 68);
             this.tableLayoutPanel6.TabIndex = 4;
             // 
             // groupComboBox
@@ -290,7 +290,7 @@
             this.checkBoxGroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxGroup.Location = new System.Drawing.Point(3, 3);
             this.checkBoxGroup.Name = "checkBoxGroup";
-            this.checkBoxGroup.Size = new System.Drawing.Size(178, 61);
+            this.checkBoxGroup.Size = new System.Drawing.Size(178, 62);
             this.checkBoxGroup.TabIndex = 1;
             this.checkBoxGroup.Text = "Group";
             this.checkBoxGroup.UseVisualStyleBackColor = true;
@@ -299,9 +299,9 @@
             // 
             this.searchButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchButton.Font = new System.Drawing.Font("Comic Sans MS", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchButton.Location = new System.Drawing.Point(3, 514);
+            this.searchButton.Location = new System.Drawing.Point(3, 521);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(647, 148);
+            this.searchButton.Size = new System.Drawing.Size(647, 143);
             this.searchButton.TabIndex = 0;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
@@ -319,11 +319,11 @@
             this.tableLayoutPanel3.Controls.Add(this.DomRadioButton, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.autoRadioButton, 3, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 441);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 447);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(647, 67);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(647, 68);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // SaxRadioButton
@@ -382,7 +382,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(647, 67);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(647, 68);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // checkBoxSpecialty
@@ -391,7 +391,7 @@
             this.checkBoxSpecialty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxSpecialty.Location = new System.Drawing.Point(3, 3);
             this.checkBoxSpecialty.Name = "checkBoxSpecialty";
-            this.checkBoxSpecialty.Size = new System.Drawing.Size(178, 61);
+            this.checkBoxSpecialty.Size = new System.Drawing.Size(178, 62);
             this.checkBoxSpecialty.TabIndex = 0;
             this.checkBoxSpecialty.Text = "Specialty";
             this.checkBoxSpecialty.UseVisualStyleBackColor = true;
@@ -414,7 +414,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 41;
-            this.dataGridView1.Size = new System.Drawing.Size(1094, 665);
+            this.dataGridView1.Size = new System.Drawing.Size(1094, 667);
             this.dataGridView1.TabIndex = 1;
             // 
             // menuStrip1
@@ -425,7 +425,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1759, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(1759, 40);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -434,7 +434,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.transformToHTMLToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(71, 38);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(71, 36);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // transformToHTMLToolStripMenuItem
@@ -447,7 +447,7 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(84, 38);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(84, 36);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 

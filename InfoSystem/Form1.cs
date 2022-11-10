@@ -5,6 +5,7 @@ using System.Xml.Serialization;
 using System.Data.SqlTypes;
 using System.Text;
 using System.Xml.Xsl;
+using InfoSystem.AnalysingMethods;
 
 namespace InfoSystem
 {
@@ -91,16 +92,13 @@ namespace InfoSystem
             DomRadioButton.Checked = true;
         }
         // // //
-        private dataBase XmlAutoReading() // Заповнює класи у XMLClasses інфою із нашого dataBase.xml
-        {
-            return (dataBase)new XmlSerializer(typeof(dataBase)).Deserialize(new StreamReader(filePath));
-        }
         public Form1()
         {
 
             InitializeComponent();
             InitializeRadioButton();
-            InitializeComboBox(XmlAutoReading());
+            XmlAutoAnalysing analysing = new XmlAutoAnalysing();
+            InitializeComboBox(analysing.XmlAutoReading(filePath));
             InitializeDataGridView();
 
 
@@ -130,247 +128,25 @@ namespace InfoSystem
         }
 
         // // // Analising (output) methods // // //
-        private void XmlDOMAnalising(string[] restrictions)
-        {
-            XmlDocument xml = new XmlDocument();
-            xml.Load(filePath);
-            XmlElement dataBase = xml.DocumentElement;
-
-            int col = 0, row = 0;
-            foreach (XmlNode _specialty in dataBase) // specialty
-            {
-                if ((restrictions[0] == _specialty.Attributes.GetNamedItem("SPECIALTY").Value) || (restrictions[0] == string.Empty))
-                {
-                    foreach (XmlNode _group in _specialty.ChildNodes) //group
-                    {
-                        if ((restrictions[1] == _group.Attributes.GetNamedItem("GROUP").Value) || (restrictions[1] == string.Empty))
-                        {
-                            foreach (XmlNode _student in _group.ChildNodes) //student
-                            {
-                                if ((restrictions[2] == _student.ChildNodes[0].InnerText || (restrictions[2] == string.Empty)) &&(restrictions[3] == _student.ChildNodes[1].InnerText || (restrictions[3] == string.Empty)) &&(restrictions[4] == _student.ChildNodes[2].InnerText || (restrictions[4] == string.Empty)) &&(restrictions[5] == _student.ChildNodes[3].InnerText || (restrictions[5] == string.Empty)))
-                                {
-                                    dataGridView1[col++, row].Value = _specialty.Attributes.GetNamedItem("SPECIALTY").Value;
-                                    dataGridView1[col++, row].Value = _group.Attributes.GetNamedItem("GROUP").Value;
-                                    dataGridView1[col++, row].Value = _student.ChildNodes[0].InnerText;
-                                    dataGridView1[col++, row].Value = _student.ChildNodes[1].InnerText;
-                                    dataGridView1[col++, row].Value = _student.ChildNodes[2].InnerText;
-                                    dataGridView1[col++, row].Value = _student.ChildNodes[3].InnerText;
-
-                                    if (rowCount - row == 1)
-                                    {
-                                        rowCount += 10;
-                                        dataGridView1.RowCount = rowCount;
-                                    }
-                                    ++row;
-                                    col = 0;
-                                }
-                                
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        private void XmlSAXAnalising(string[] restrictions)
-        {
-            var sb = new string[columnCount];
-            var xmlReader = new XmlTextReader(filePath);
-            int col = 0, row = 0;
-            while (xmlReader.Read())
-            {
-                switch(xmlReader.NodeType)
-                {
-                    case XmlNodeType.XmlDeclaration:
-                        break;
-                    case XmlNodeType.Element:
-                        if (xmlReader.Name == "specialty")
-                        {
-                            if ((xmlReader.GetAttribute(0) == (restrictions[0] == String.Empty ? xmlReader.GetAttribute(0) : restrictions[0])))
-                            {
-                                col = 0;
-                                sb[col++] = xmlReader.GetAttribute(0);
-                            }
-                            else
-                            {
-                                xmlReader.Read();
-                                while (xmlReader.Name != "specialty")
-                                {
-                                    xmlReader.Read();
-                                }
-                            }
-                        }
-                        else if (xmlReader.Name == "group")
-                        {
-                            col = 1;
-                            if ((xmlReader.GetAttribute(0) == (restrictions[1] == String.Empty ? xmlReader.GetAttribute(0) : restrictions[1])))
-                            {
-                                sb[col++] = xmlReader.GetAttribute(0);
-                            }
-                            else
-                            {
-                                xmlReader.Read();
-                                while (xmlReader.Name != "group")// || xmlReader.Name != "specialty")
-                                {
-                                    xmlReader.Read();
-                                }
-                            }
-                        }
-                        else if (xmlReader.Name == "student")
-                        {
-                            col = 2;
-                            while (xmlReader.Read())
-                            {
-                                if (xmlReader.Name == "student")
-                                    break;
-                                else if(xmlReader.NodeType == XmlNodeType.Text)
-                                {
-                                    if (xmlReader.Value == (restrictions[col] == String.Empty ? xmlReader.Value : restrictions[col]))
-                                    {
-                                        sb[col++] = xmlReader.Value;
-                                    }
-                                    else
-                                    {
-                                        while (xmlReader.Name != "student")
-                                        {
-                                            xmlReader.Read();
-                                        }
-                                        break;
-
-                                    }
-                                    if (col == columnCount)
-                                    {
-                                        int i = 0;
-                                        foreach(string cell in sb)
-                                        {
-                                            dataGridView1[i++, row].Value = cell;
-                                        }
-                                        if (rowCount - row == 1)
-                                        {
-                                            rowCount += 10;
-                                            dataGridView1.RowCount = rowCount;
-                                        }
-                                        ++row;
-                                    }
-                                }
-                            }
-                            
-                        }
-                        break;
-                    case XmlNodeType.Comment:
-                        break;
-                    case XmlNodeType.Text:
-                        break;
-                }
-            }
-            xmlReader.Close();
-        }
-        private void XmlAutoAnalising(string[] restrictions) // Роблю теж саме, що й у XmlLinqAnalising, але працюю не з XML файлом, а з класами XMLClasses
-        {
-            dataBase dataBaseClass = XmlAutoReading(); // закидую інфу з мого xml файла у класи XMLClasses
-            // // // За допомогою Linq зберігаю у mySpecialty усі спеціальності, що задані фільтром (або якась конкретна, або усі разом) // // //
-            var mySpecialty =
-                from specialty in dataBaseClass.specialty
-                where (specialty.SPECIALTY == (restrictions[0] == string.Empty ? specialty.SPECIALTY : restrictions[0]))
-                select specialty;
-            // // // 
-
-            int col = 0, row = 0;
-            foreach (var sp in mySpecialty)
-            {
-                // // // До кожної спеціальності підбираю список груп (myGroup), що відповідають фільтрам // // //
-                var myGroup =
-                    from spGroup in sp.@group
-                    where (spGroup.GROUP == (restrictions[1] == String.Empty ? spGroup.GROUP : restrictions[1]))
-                    select spGroup;
-                // // // 
-                foreach (var gr in myGroup)
-                {
-                    // // // У кожній групі вибираю студентів, що проходят по усім фільтрам (ім'я, призвище, номер телефону, прописка) // // //)
-                    var myStudent =
-                        from mySt in gr.student
-                        where ((mySt.name == (restrictions[2] == String.Empty ? mySt.name : restrictions[2])) && (mySt.surname == (restrictions[3] == String.Empty ? mySt.surname : restrictions[3])) && (mySt.phone == (restrictions[4] == String.Empty ? mySt.phone : ulong.Parse(restrictions[4]))) && (mySt.registration == (restrictions[5] == String.Empty ? mySt.registration : restrictions[5])))
-                        select mySt;
-                    // // // Виводжу усе, що відфільтрувалось // // //
-                    foreach (var st in myStudent)
-                    {
-                        dataGridView1[col++, row].Value = sp.SPECIALTY;
-                        dataGridView1[col++, row].Value = gr.GROUP;
-                        dataGridView1[col++, row].Value = st.name;
-                        dataGridView1[col++, row].Value = st.surname;
-                        dataGridView1[col++, row].Value = st.phone;
-                        dataGridView1[col++, row].Value = st.registration;
-                        col = 0;
-                        if (rowCount - row == 1)
-                        {
-                            rowCount += 10;
-                            dataGridView1.RowCount = rowCount;
-                        }
-                        ++row;
-                    }
-                    // // //
-                }
-            }
-
-        }
-        private void XmlLinqAnalising(string[] restrictions)
-        {
-            XDocument xdoc = XDocument.Load(filePath);
-            // // // За допомогою Linq зберігаю у mySpecialty усі спеціальності, що задані фільтром (або якась конкретна, або усі разом) // // //
-            var mySpecialty =
-                from specialty in xdoc.Descendants("specialty")
-                where (specialty.Attribute("SPECIALTY").Value == (restrictions[0] == string.Empty ? specialty.Attribute("SPECIALTY").Value : restrictions[0]))
-                select specialty;
-            // // // 
-
-            int col = 0, row = 0;
-            foreach (var sp in mySpecialty)
-            {
-                // // // До кожної спеціальності підбираю список груп (myGroup), що відповідають фільтрам // // //
-                var myGroup =
-                    from spGroup in sp.Descendants("group")
-                    where (spGroup.Attribute("GROUP").Value == (restrictions[1] == string.Empty ? spGroup.Attribute("GROUP").Value : restrictions[1]))
-                    select spGroup;
-                // // // 
-                foreach (var gr in myGroup)
-                {
-                    // // // У кожній групі вибираю студентів, що проходят по усім фільтрам (ім'я, призвище, номер телефону, прописка) // // //)
-                    var myStudent =
-                        from mySt in gr.Descendants("student")
-                        where ((mySt.Elements("name").Single().Value == (restrictions[2] == String.Empty ? mySt.Elements("name").Single().Value : restrictions[2])) && (mySt.Elements("surname").Single().Value == (restrictions[3] == String.Empty ? mySt.Elements("surname").Single().Value : restrictions[3])) && (mySt.Elements("phone").Single().Value == (restrictions[4] == String.Empty ? mySt.Elements("phone").Single().Value : restrictions[4])) && (mySt.Elements("registration").Single().Value == (restrictions[5] == String.Empty ? mySt.Elements("registration").Single().Value : restrictions[5])))
-                        select mySt;
-                    // // // Виводжу усе, що відфільтрувалось // // //
-                    foreach (var st in myStudent)
-                    {
-                        dataGridView1[col++, row].Value = sp.Attribute("SPECIALTY").Value;
-                        dataGridView1[col++, row].Value = gr.Attribute("GROUP").Value;
-                        dataGridView1[col++, row].Value = st.Elements("name").Single().Value;
-                        dataGridView1[col++, row].Value = st.Elements("surname").Single().Value;
-                        dataGridView1[col++, row].Value = st.Elements("phone").Single().Value;
-                        dataGridView1[col++, row].Value = st.Elements("registration").Single().Value;
-                        if (rowCount - row == 1)
-                        {
-                            rowCount += 10;
-                            dataGridView1.RowCount = rowCount;
-                        }
-                        ++row;
-                        col = 0;
-                    }
-                    // // //
-                }
-            }
-        }
+        
         private void AnaliseFile(string[] restrictions)
         {
             if (File.Exists(filePath))
             {
+                IAnalysing Analysing; // Задаю свій об'єкт Analysing
+
+                // Визначаю об'єкт Analysing
                 if (DomRadioButton.Checked)
-                    XmlDOMAnalising(restrictions);
+                    Analysing = new XmlDOMAnalysing();
                 else if (SaxRadioButton.Checked)
-                    XmlSAXAnalising(restrictions);
+                    Analysing = new XmlSAXAnalysing();
                 else if (LinqRadioButton.Checked)
-                    XmlLinqAnalising(restrictions);
-                else if (autoRadioButton.Checked)
-                    XmlAutoAnalising(restrictions);
+                    Analysing = new XmlLinqAnalysing();
+                else //if (autoRadioButton.Checked)
+                    Analysing = new XmlAutoAnalysing();
+                
+                //Викликаю відповідний метод
+                Analysing.AnalisingMethod(restrictions, filePath, dataGridView1);
             }
             else
                 MessageBox.Show("FilePath_ERROR");
@@ -392,8 +168,13 @@ namespace InfoSystem
         private void transformToHTMLToolStripMenuItem_Click(object sender, EventArgs e)
         {
             XslCompiledTransform xslt = new XslCompiledTransform();
-            xslt.Load("dataBaseXSL.xsl");
-            xslt.Transform("dataBase.xml", "dataBase.html");
+            if (File.Exists(filePath))
+            {
+                xslt.Load("dataBaseXSL.xsl");
+                xslt.Transform("dataBase.xml", "dataBase.html");
+            }
+            else
+                MessageBox.Show("FilePath_ERROR");
         }
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
