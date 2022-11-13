@@ -128,7 +128,6 @@ namespace InfoSystem
         }
 
         // // // Analising (output) methods // // //
-        
         private void AnaliseFile(string[] restrictions)
         {
             if (File.Exists(filePath))
