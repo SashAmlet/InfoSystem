@@ -54,9 +54,6 @@ namespace InfoSystem.AnalysingMethods
                         ++row;
                         col = 0;
                     }
-                    // // //
-                }
-            }
         }
     }
 }
