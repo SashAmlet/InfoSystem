@@ -103,7 +103,7 @@ namespace InfoSystem
 
 
         }
-        // // // Restriction methods // // //
+        // // // Rest   riction methods // // //
         private bool[] checkBoxCheck()
         {
             var checkBoxes = new bool[checkBoxCount]; 
